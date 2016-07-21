@@ -16,6 +16,7 @@ public class FirstView extends View {
     private Paint paint;
     private int w;
     private int h;
+    private int radius;
 
     public FirstView(Context context) {
         this(context,null);
@@ -31,12 +32,14 @@ public class FirstView extends View {
         paint.setColor(Color.RED);
         paint.setStyle(Paint.Style.STROKE);
         paint.setAntiAlias(true);
+        paint.setStrokeWidth(5);
+        radius = 100;
     }
 
 
     @Override
     protected void onDraw(Canvas canvas) {
-        canvas.drawCircle(w/2,h/2,50,paint);
+        canvas.drawCircle(w/2,h/2,radius,paint);
         super.onDraw(canvas);
     }
 
@@ -44,8 +47,13 @@ public class FirstView extends View {
     //默认不支持wrap_content  如果设置成wrap_content 计算大小的结果与 match_parent一样
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = widthMode==MeasureSpec.AT_MOST?radius*2+10:getDefaultSize(getSuggestedMinimumWidth(),widthMeasureSpec);
+        int height = heightMode==MeasureSpec.AT_MOST?radius*2+10:getDefaultSize(getSuggestedMinimumHeight(),heightMeasureSpec);
+
+        setMeasuredDimension(width,height);
     }
 
     @Override
