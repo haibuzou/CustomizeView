@@ -12,12 +12,12 @@
     tools:context="haibuzou.customizeview.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <haibuzou.customizeview.FirstView
+    <haibuzou.customizeview.view.FirstView
         android:id="@+id/firstView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-    <haibuzou.customizeview.ColorFilterView
+    <haibuzou.customizeview.view.ColorFilterView
         android:layout_toRightOf="@id/firstView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

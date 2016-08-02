@@ -1,4 +1,4 @@
-package haibuzou.customizeview;
+package haibuzou.customizeview.view;
 
 
 import android.content.Context;
@@ -14,6 +14,8 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
 import android.view.View;
+
+import haibuzou.customizeview.R;
 
 public class ColorFilterView extends View {
 
@@ -46,7 +48,7 @@ public class ColorFilterView extends View {
         }
         );
         mPaint.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.sanji);
+        bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.sanji);
         jugg = BitmapFactory.decodeResource(context.getResources(),R.drawable.jugg);
         //光照颜色过滤
         LightingColorFilter lightingColorFilter = new LightingColorFilter(0xFFFF00FF, 0x00000000);

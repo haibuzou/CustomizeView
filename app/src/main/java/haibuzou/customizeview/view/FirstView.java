@@ -1,4 +1,4 @@
-package haibuzou.customizeview;
+package haibuzou.customizeview.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
